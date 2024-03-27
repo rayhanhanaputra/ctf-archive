@@ -1,0 +1,8 @@
+version: '3'
+services:
+  orw:
+    build: .
+    ports:
+      - "11337:11337"
+    entrypoint: /etc/init.sh
+    restart: unless-stopped

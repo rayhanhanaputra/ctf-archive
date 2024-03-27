@@ -1,0 +1,28 @@
+version: '3.4'
+services:
+  babytodo_db:
+    image: mariadb
+    container_name: 'babytodo_db'
+    restart: always
+    environment:
+      - MYSQL_USER=ctf
+      - MYSQL_PASSWORD=ctf
+      - MYSQL_DATABASE=CTF
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_TIMEZONE=Asia/seoul
+    volumes:
+      - "./db/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    expose:
+      - 3306
+  babytodo_web:
+    container_name: 'babytodo_web'
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./www:/var/www/html"
+    ports: 
+        - 20006:80
+    links: 
+        - 'babytodo_db'

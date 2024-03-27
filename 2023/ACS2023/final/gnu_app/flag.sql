@@ -1,0 +1,5 @@
+USE gnuboard;
+CREATE TABLE IF NOT EXISTS FLAG(
+	flag VARCHAR(255)
+);
+INSERT INTO FLAG values("ACS{fake_flag}");

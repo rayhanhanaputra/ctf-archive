@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  web:
+    container_name: web_xe3
+    build: .
+    ports:
+      - "22020:80"
+    volumes:
+      - "./flag:/flag:ro"
+    depends_on:
+      - "db"
+  db:
+    container_name: db_xe3
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: xe3
+      MYSQL_DATABASE: xe3
+      MYSQL_USER: xe3
+      MYSQL_PASSWORD: xe3

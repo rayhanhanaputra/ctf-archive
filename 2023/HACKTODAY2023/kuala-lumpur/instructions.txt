@@ -1,0 +1,10 @@
+1. Apa nama kawasan yang dimaksud pada soal? (format: NamaKawasan)
+2. Kapan foto tersebut diambil? (format: YYYYMMDD)
+3. Apa nama benda langit yang terdapat pada foto?
+4. Pada tanggal di mana foto diambil, benda langit tersebut berada pada rasi bintang apa? (format: nama standar dalam bahasa latin)
+
+Masukkan jawaban ke dalam flag dengan format hacktoday{Answer1_Answer2_Answer3_Answer4}
+
+contoh flag: hacktoday{BukitBintang_20230923_Jupiter_Aquarius}
+
+hacktoday{KampungBaru_asd_Mars_asd}

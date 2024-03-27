@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Home Bad Pollution</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/nes-core.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    </head>
+    <body>
+        <div class="parent-container">
+            <div class="sidebar">
+                <p class="title-p">Bad Pollution Opinions</p>
+                <p>Your Reward is : ${{user.reward}}</p>
+                <p class="title-p">{%if user.claimed === 1%}You have claimed your Reward{% endif %}</p>
+                <ul class="nav-bar">
+                    <li><a href="#" class="nes-btn is-primary nav-li">Home</a></li>
+                    <li><a href="/logout" class="nes-btn is-primary nav-li">Logout</a></li>
+                </ul>
+            </div>
+            <div class="main-area">
+                <label id="resp">Send in Your Opinion</label>
+                <textarea id="content-box" class="nes-textarea is-dark postbox-area"></textarea>
+                <button type="button" class="nes-btn submit-btn" id="submit-btn">Submit</button>
+
+                {% for opinion in opinions %}
+                <div class="post-arrangement">
+                    <div class="nes-container is-post with-title">
+                        <p class="title">
+                            <span>{{ opinion.email}}</span>
+                            <span>{{ opinion.created_at}}</span>
+                        </p>
+                        <p>{{ opinion.content }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/static/js/jquery-3.6.0.slim.min.js"></script>
+        <script type="text/javascript" src="/static/js/opinion.js"></script>
+    </body>
+</html>

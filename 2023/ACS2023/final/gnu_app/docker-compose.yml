@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  web:
+    container_name: web_gnuboard
+    image: web_gnuboard
+    build: .
+    ports:
+      - "20002:80"
+    depends_on:
+      - "db"
+  db:
+    container_name: db_gnuboard
+    image: mariadb
+    volumes:
+      - ./flag.sql:/docker-entrypoint-initdb.d/flag.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: gnuboard
+      MYSQL_DATABASE: gnuboard
+      MYSQL_USER: gnuboard
+      MYSQL_PASSWORD: gnuboard

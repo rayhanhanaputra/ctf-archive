@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+p {
+    margin: 20px 0;
+}
+
+.main-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.login-form {
+    width: 320px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.submit-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn.is-primary {
+    background-color: #3498db;
+}
+
+.submit-btn.is-secondary {
+    background-color: #e74c3c;
+}
+
+
+#resp-msg {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.alert {
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+}

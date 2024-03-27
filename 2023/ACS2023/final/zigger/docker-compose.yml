@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  web:
+    container_name: web_zigger
+    build: .
+    ports:
+      - "22030:80"
+    depends_on:
+      - "db"
+  db:
+    container_name: db_zigger
+    image: mariadb
+    volumes: 
+      - ./flag.sql:/docker-entrypoint-initdb.d/flag.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: zigger
+      MYSQL_DATABASE: zigger
+      MYSQL_USER: zigger
+      MYSQL_PASSWORD: zigger

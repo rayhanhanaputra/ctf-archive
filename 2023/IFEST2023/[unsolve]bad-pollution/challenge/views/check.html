@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Admin only Review</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/nes-core.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    </head>
+    <body>
+        <div class="main-area">
+            <label id="resp">Admin Check</label>
+            <h3>email: {{user.email|safe}}</h3>
+            <h3>id {{user.id|safe}}</h3>
+            <button type="button" class="nes-btn submit-btn">Approve</button>
+            {% for opinion in opinions %}
+            <div class="post-arrangement">
+                <div class="nes-container is-post with-title">
+                    <p class="title">
+                        <span>{{ opinion.user_id}}</span>
+                        <span>{{ opinion.created_at}}</span>
+                    </p>
+                    <p>{{ opinion.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  database:
+    restart: always
+    image: mysql:8
+    container_name: gemas-database
+    environment: 
+      MYSQL_ROOT_PASSWORD: masuk123aja
+      MYSQL_DATABASE: gemasnotes
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  gemas-notes:
+    restart: always
+    container_name: gemas-notes
+    build:
+      context: ./note-service
+      dockerfile: Dockerfile
+      args:
+        - PASSWORD=toor
+    depends_on:
+      - database
+    ports:
+      - "22:22"
+  
+  validation-service:
+    restart: always
+    container_name: validation-service
+    build:
+      context: ./validation-service
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+      - gemas-notes
+    ports:
+      - "3000:80"
+    

@@ -1,0 +1,45 @@
+flag = [0]*40
+
+flag[24]=111
+flag[8]=47
+flag[15]=118
+flag[31]=32
+flag[1]=112
+flag[26]=32
+flag[0]=105
+flag[23]=110
+flag[11]=45
+flag[16]=101
+flag[2]=98
+flag[20]=104
+flag[7]=107
+flag[10]=51
+flag[30]=103
+flag[36]=36
+flag[38]=36
+flag[33]=116
+flag[32]=98
+flag[3]=46
+flag[22]=40
+flag[28]=108
+flag[4]=108
+flag[35]=32
+flag[29]=97
+flag[5]=105
+flag[25]=116
+flag[27]=102
+flag[39]=41
+flag[17]=45
+flag[19]=117
+flag[18]=104
+flag[6]=110
+flag[13]=111
+flag[12]=122
+flag[9]=122
+flag[21]=32
+flag[37]=94
+flag[34]=119
+flag[14]=108
+
+for c in flag:
+   print(chr(c),end="")

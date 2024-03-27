@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  backend:
+    container_name: dashboard_ctf
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 20000:8000
+    environment:
+      - MONGO_URI=mongodb://ctf:asjdkjk23j1k3dsdn2h233j3jj@mongodb:27017/web_fetcher?authSource=admin
+      - APP_URI=http://localhost:20000
+
+  mongodb:
+    container_name: mongodb_ctf
+    image: mongo:4.4
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=ctf
+      - MONGO_INITDB_ROOT_PASSWORD=asjdkjk23j1k3dsdn2h233j3jj
+      - MONGO_INITDB_DATABASE=web_fetcher

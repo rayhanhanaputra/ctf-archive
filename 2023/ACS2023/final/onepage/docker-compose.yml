@@ -1,0 +1,10 @@
+version: "3.5"
+
+services:
+  web-server:
+    build: ./service/
+    image: apache-php
+    container_name: web-server
+    restart: always
+    ports:
+      - 40080:80
